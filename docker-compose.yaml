@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  prism:
+    build: ./infra/mock-server
+    tty: true
+    volumes:
+      - ./reference:/data
+    ports:
+      - "3010:3010"
+    networks:
+      - cansho_development
+
+networks:
+  cansho_development:
+    external: true
