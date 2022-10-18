@@ -1,12 +1,22 @@
 version: '3.9'
 services:
   prism:
-    build: ./infra/mock-server
+    build: ./dockerfile/prism
     tty: true
     volumes:
       - ./reference:/data
     ports:
       - "3010:3010"
+    networks:
+      - cansho_development
+
+  redoc:
+    build: ./dockerfile/redoc
+    tty: true
+    volumes:
+      - ./reference:/data
+    ports:
+      - "3020:3020"
     networks:
       - cansho_development
 
