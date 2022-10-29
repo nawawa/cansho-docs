@@ -108,6 +108,24 @@ paths:
                 type: object
                 properties: {}
       operationId: get-api-post-postId
+  /api/image/upload:
+    post:
+      summary: ''
+      operationId: post-api-image-upload
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  path:
+                    type: string
+              examples:
+                example-1:
+                  value:
+                    path: 'https://picsum.photos/1300/500'
 components:
   schemas:
     User:
