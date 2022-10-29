@@ -110,7 +110,7 @@ paths:
       operationId: get-api-post-postId
   /api/image/upload:
     post:
-      summary: ''
+      summary: 画像アップロード
       operationId: post-api-image-upload
       responses:
         '201':
