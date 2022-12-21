@@ -126,6 +126,65 @@ paths:
                 example-1:
                   value:
                     path: 'https://picsum.photos/1300/500'
+  /api/ogp/external:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  og:
+                    type: object
+                    properties:
+                      url:
+                        type: string
+                      type:
+                        type: string
+                      title:
+                        type: string
+                      image:
+                        type: string
+                      description:
+                        type: string
+                      site_name:
+                        type: string
+              examples:
+                Example 1:
+                  value:
+                    title: 'なぜ映画は「観るのがたいへんなもの」になってしまったか｜ねん｜note '
+                    description: もう何度目かの「シン・ゴジラ」をアマゾンプライムで再生するたび、どう考えてもレンタルビデオ屋でDVDを借りてた頃のほうが楽しく映画を観ていたように思えてなりません。 学生の頃に観た「グリーンカード」「パラドクス」のように、ちょっと映画に通じてる人っぽいチョイスが全然できなくなりました。おもしろいとわかりきったものに手を出してしまう、現代人のクセがとうとう自分にも。 結局同じのを何回も観てしまっているというわけで、もう数えるのもあほらしいほど「シン・ゴジラ」を観たし、配信解禁早々「シン・ウルトラマン」も3回（映画館含めたら4回）ほど観たし、「スパイダーマン ノーウェイホーム」も映画館
+                    og:
+                      url: 'https://note.com/nenn3ng/n/n249429052d60'
+                      type: article
+                      title: なぜ映画は「観るのがたいへんなもの」になってしまったか｜ねん｜note
+                      image: 'https://assets.st-note.com/production/uploads/images/92968537/rectangle_large_type_2_2c5bda5b4edc9c062717df5cbf7e6354.png?fit=bounds&quality=85&width=1280'
+                      description: もう何度目かの「シン・ゴジラ」をアマゾンプライムで再生するたび、どう考えてもレンタルビデオ屋でDVDを借りてた頃のほうが楽しく映画を観ていたように思えてなりません。 学生の頃に観た「グリーンカード」「パラドクス」のように、ちょっと映画に通じてる人っぽいチョイスが全然できなくなりました。おもしろいとわかりきったものに手を出してしまう、現代人のクセがとうとう自分にも。 結局同じのを何回も観てしまっているというわけで、もう数えるのもあほらしいほど「シン・ゴジラ」を観たし、配信解禁早々「シン・ウルトラマン」も3回（映画館含めたら4回）ほど観たし、「スパイダーマン ノーウェイホーム」も映画館
+                      site_name: note（ノート）
+        '':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  '':
+                    type: string
+      operationId: get-ogp-external
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: url
+          description: OGP を取得したい外部サイトのURL
+    parameters: []
 components:
   schemas:
     User:
