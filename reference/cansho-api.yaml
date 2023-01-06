@@ -97,7 +97,7 @@ paths:
         in: path
         required: true
     get:
-      summary: Your GET endpoint
+      summary: 記事詳細取得
       tags: []
       responses:
         '200':
@@ -120,12 +120,22 @@ paths:
               schema:
                 type: object
                 properties:
-                  path:
+                  src:
                     type: string
               examples:
                 example-1:
                   value:
-                    path: 'https://picsum.photos/1300/500'
+                    src: 'https://picsum.photos/1300/500'
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: object
+      description: ''
   /api/ogp/external:
     get:
       summary: Your GET endpoint
